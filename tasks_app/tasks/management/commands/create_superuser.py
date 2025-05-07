@@ -2,10 +2,11 @@ import os
 from django.core.management.base import BaseCommand
 from dotenv import load_dotenv
 from django.contrib.auth import get_user_model
-
+from django.conf import settings
 
 User = get_user_model()
-load_dotenv()
+env_path = settings.BASE_DIR / ".." / ".env"
+load_dotenv(env_path)
 
 
 class Command(BaseCommand):

@@ -13,9 +13,9 @@ services:
       - .env
     command: >
       sh -c "python3 manage.py makemigrations &&
-             python3 manage.py migrate &&
-             python3 manage.py createsuperuser &&
-             python3 manage.py runserver 0.0.0:8000"
+         python3 manage.py migrate &&
+         python3 manage.py create_superuser &&
+         python3 manage.py runserver 0.0.0.0:8000"
 
   web2:
     build: ./tasks_app
@@ -31,9 +31,9 @@ services:
       - .env
     command: >
       sh -c "python3 manage.py makemigrations &&
-             python3 manage.py migrate &&
-             python3 manage.py createsuperuser &&
-             python3 manage.py runserver 0.0.0:8000"
+         python3 manage.py migrate &&
+         python3 manage.py create_superuser &&
+         python3 manage.py runserver 0.0.0.0:8000"
   db:
     image: postgres:latest
     container_name: postgres_db
